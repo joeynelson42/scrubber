@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sCf-oK-b1V">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Fullscreen View Controller-->
+        <scene sceneID="uJw-84-af4">
+            <objects>
+                <viewController storyboardIdentifier="FullscreenViewController" id="sCf-oK-b1V" customClass="FullscreenViewController" customModule="ScrubberDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="96K-Qq-dE2"/>
+                        <viewControllerLayoutGuide type="bottom" id="RAu-M3-3w3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EJi-0Z-HUb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7o0-ai-Uue" userLabel="Scrubber">
+                                <rect key="frame" x="-4" y="556" width="608" height="80"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="wFh-Vw-IfM"/>
+                                </constraints>
+                                <collectionViewLayout key="collectionViewLayout" id="it0-NJ-swe" customClass="FCScrubberFlowLayout" customModule="Flaschards" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scrubberCell" id="c49-wI-hsF" customClass="FCScrubberViewCell" customModule="Flaschards" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d4s-ri-y79">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card!" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-fY-qeN">
+                                                    <rect key="frame" x="1" y="11" width="49" height="28"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                    <color key="textColor" red="0.24313725489999999" green="0.52549019610000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerY" secondItem="AMm-fY-qeN" secondAttribute="centerY" id="3aS-9Z-oit"/>
+                                            <constraint firstAttribute="trailing" secondItem="d4s-ri-y79" secondAttribute="trailing" id="7hw-8S-zgE"/>
+                                            <constraint firstItem="d4s-ri-y79" firstAttribute="top" secondItem="c49-wI-hsF" secondAttribute="top" id="8Wn-cf-HO7"/>
+                                            <constraint firstItem="d4s-ri-y79" firstAttribute="leading" secondItem="c49-wI-hsF" secondAttribute="leading" id="Jr6-eg-1AO"/>
+                                            <constraint firstAttribute="centerX" secondItem="AMm-fY-qeN" secondAttribute="centerX" id="tpe-7q-h4D"/>
+                                            <constraint firstAttribute="bottom" secondItem="d4s-ri-y79" secondAttribute="bottom" id="x1O-c4-8xT"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="centerLabel" destination="AMm-fY-qeN" id="txB-KE-ioN"/>
+                                            <outlet property="scrubberImageView" destination="d4s-ri-y79" id="mPM-0V-TDI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showsHorizontalScrollIndicator" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sCf-oK-b1V" id="63X-Qj-hDg"/>
+                                    <outlet property="delegate" destination="sCf-oK-b1V" id="kLz-tY-SW3"/>
+                                </connections>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scrubber_selected_border" translatesAutoresizingMaskIntoConstraints="NO" id="Eus-ZS-PlO">
+                                <rect key="frame" x="236" y="559" width="127" height="75"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="krA-8h-NNU"/>
+                                    <constraint firstAttribute="height" constant="75" id="wBj-Ii-4l3"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-GT-N2g" userLabel="Toolbar">
+                                <rect key="frame" x="-4" y="556" width="608" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-DU-3ii">
+                                        <rect key="frame" x="274" y="7" width="60" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2q7-Ko-Wmf"/>
+                                            <constraint firstAttribute="width" constant="60" id="Oc4-2u-SRO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                        <state key="normal" title="1/20">
+                                            <color key="titleColor" red="0.24313725489999999" green="0.52549019610000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                <color key="value" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scrubberToggleButton:" destination="sCf-oK-b1V" eventType="touchUpInside" id="ZvQ-Ss-U4Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Ch5-DU-3ii" secondAttribute="centerX" id="J8k-8c-PIl"/>
+                                    <constraint firstAttribute="height" constant="44" id="sZe-D5-erD"/>
+                                    <constraint firstAttribute="centerY" secondItem="Ch5-DU-3ii" secondAttribute="centerY" id="y5g-yN-QRh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMe-6a-vNo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashcards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZs-fu-S70">
+                                        <rect key="frame" x="258" y="32" width="84" height="20"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.52549019610000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="PZs-fu-S70" firstAttribute="top" secondItem="IMe-6a-vNo" secondAttribute="top" constant="32" id="6bt-t4-tEF"/>
+                                    <constraint firstItem="PZs-fu-S70" firstAttribute="leading" secondItem="IMe-6a-vNo" secondAttribute="leading" constant="133" id="951-sK-TSA"/>
+                                    <constraint firstItem="PZs-fu-S70" firstAttribute="centerX" secondItem="IMe-6a-vNo" secondAttribute="centerX" id="bYv-yT-pMP"/>
+                                    <constraint firstAttribute="bottom" secondItem="PZs-fu-S70" secondAttribute="bottom" constant="12" id="rLG-Ks-tdV"/>
+                                    <constraint firstAttribute="trailing" secondItem="PZs-fu-S70" secondAttribute="trailing" constant="133" id="rjD-1u-GQV"/>
+                                    <constraint firstAttribute="height" constant="64" id="vXW-Fa-vhV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="951-sK-TSA"/>
+                                        <exclude reference="rjD-1u-GQV"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="RAu-M3-3w3" firstAttribute="top" secondItem="7o0-ai-Uue" secondAttribute="bottom" constant="-36" id="7Cv-b5-dy0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7o0-ai-Uue" secondAttribute="trailing" constant="-20" id="DPm-TW-KdM"/>
+                            <constraint firstItem="IMe-6a-vNo" firstAttribute="leading" secondItem="EJi-0Z-HUb" secondAttribute="leading" id="Ihz-ms-oDn"/>
+                            <constraint firstAttribute="trailing" secondItem="IMe-6a-vNo" secondAttribute="trailing" id="MSy-KZ-ZNL"/>
+                            <constraint firstItem="AvV-GT-N2g" firstAttribute="leading" secondItem="EJi-0Z-HUb" secondAttribute="leading" constant="-4" id="NbS-0C-AQk"/>
+                            <constraint firstAttribute="trailing" secondItem="AvV-GT-N2g" secondAttribute="trailing" constant="-4" id="QFo-mH-g7S"/>
+                            <constraint firstAttribute="centerX" secondItem="Eus-ZS-PlO" secondAttribute="centerX" constant="0.5" id="cZj-Gq-mSr"/>
+                            <constraint firstItem="RAu-M3-3w3" firstAttribute="top" secondItem="AvV-GT-N2g" secondAttribute="bottom" id="lzq-RL-jh5"/>
+                            <constraint firstItem="IMe-6a-vNo" firstAttribute="top" secondItem="EJi-0Z-HUb" secondAttribute="top" id="nYX-3T-te8"/>
+                            <constraint firstItem="AvV-GT-N2g" firstAttribute="top" secondItem="Eus-ZS-PlO" secondAttribute="bottom" constant="-78" id="tBb-km-dPD"/>
+                            <constraint firstItem="7o0-ai-Uue" firstAttribute="leading" secondItem="EJi-0Z-HUb" secondAttribute="leadingMargin" constant="-20" id="tx3-t8-zui"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrubberButton" destination="Ch5-DU-3ii" id="hfQ-Xo-RTU"/>
+                        <outlet property="scrubberCollectionView" destination="7o0-ai-Uue" id="i9s-kL-CuD"/>
+                        <outlet property="scrubberSelectedBorder" destination="Eus-ZS-PlO" id="nx8-UN-6BH"/>
+                        <outlet property="toolbarContainer" destination="AvV-GT-N2g" id="Ysh-ux-rCp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POE-jD-dR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="405"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="scrubber_selected_border" width="20" height="20"/>
+    </resources>
+</document>
